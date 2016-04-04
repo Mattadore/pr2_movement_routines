@@ -1,0 +1,18 @@
+<launch>
+	
+  <!-- this provides the IK services, as well as actionlib calls for moving the arms
+       with collision checking -->
+	
+  <!-- used for requesting the position of a given joint -->
+  <node pkg="pr2_movement_routines" name="gazebo_routine" output="screen"
+        type="gazebo_routines" />
+
+  <node name="rosbagger" pkg = "pr2_movement_routines" type="recordInteraction.py" output="screen"/>
+
+  <node name="converter" pkg = "pr2_movement_routines" type="bag2mat.py" args="1" output="screen"/>
+
+  <node name="extracter" pkg = "pr2_movement_routines" type="extractMarkers.py" args="1 6 7" output="screen"/>
+
+  <node name="filter" pkg = "particle_filter" type="main_general" output="screen"/>
+
+</launch>
