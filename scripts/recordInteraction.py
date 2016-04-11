@@ -149,7 +149,7 @@ class RecordInteraction():
 if __name__ == '__main__':
     rospy.init_node('recordInteractionNode')
     
-    rc = RecordInteraction(rospack.get_path('pr2_movement_routines')+/rosbag_stuff)
+    rc = RecordInteraction(rospack.get_path('pr2_movement_routines')+'/rosbag_stuff')
     
     r = rospy.Rate(10)
     while not (rospy.is_shutdown() or rc.stopnode):
