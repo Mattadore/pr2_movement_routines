@@ -56,7 +56,7 @@ add_executable(gazebo_routines nodes/gazebo_test.cpp)
 add_executable(tester nodes/testfile.cpp)
 target_link_libraries(gazebo_routines ${catkin_LIBRARIES} ${particle_filter_LIBRARY})
 target_link_libraries(tester ${catkin_LIBRARIES})
-add_dependencies(gazebo_routines ${PROJECT_NAME}_gencpp ${GENCPP_DEPS})
+add_dependencies(gazebo_routines ${PROJECT_NAME}_gencpp ${GENCPP_DEPS} particle_filter)
 add_dependencies(tester ${PROJECT_NAME}_gencpp ${GENCPP_DEPS})
 
 #############
